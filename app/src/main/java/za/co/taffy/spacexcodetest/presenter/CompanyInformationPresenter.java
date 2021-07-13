@@ -3,12 +3,12 @@ package za.co.taffy.spacexcodetest.presenter;
 import za.co.taffy.spacexcodetest.contract.CompanyInfoMainActivityContract;
 import za.co.taffy.spacexcodetest.model.Company;
 
-public class MainActivityPresenter implements CompanyInfoMainActivityContract.Presenter, CompanyInfoMainActivityContract.Model.OnFinishListener {
+public class CompanyInformationPresenter implements CompanyInfoMainActivityContract.Presenter, CompanyInfoMainActivityContract.Model.OnFinishListener {
 
     private CompanyInfoMainActivityContract.View mainView;
     private CompanyInfoMainActivityContract.Model companyModel;
 
-    public MainActivityPresenter(CompanyInfoMainActivityContract.View mainView, CompanyInfoMainActivityContract.Model companyModel) {
+    public CompanyInformationPresenter(CompanyInfoMainActivityContract.View mainView, CompanyInfoMainActivityContract.Model companyModel) {
         this.mainView = mainView;
         this.companyModel = companyModel;
     }
@@ -23,7 +23,6 @@ public class MainActivityPresenter implements CompanyInfoMainActivityContract.Pr
         if (mainView != null) {
             mainView.showProgressBar();
         }
-        companyModel.getLaunches(this);
         companyModel.getCompanyInfo(this);
 
     }

@@ -2,7 +2,7 @@ package za.co.taffy.spacexcodetest.contract;
 
 import za.co.taffy.spacexcodetest.model.Company;
 
-public interface MainActivityContract {
+public interface CompanyInfoMainActivityContract {
 
     interface Model{
         interface OnFinishListener {

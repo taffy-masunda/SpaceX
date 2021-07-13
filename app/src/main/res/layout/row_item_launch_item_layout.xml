@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="16dp">
+    android:elevation="16dp"
+    android:layout_margin="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,7 +15,6 @@
             android:id="@+id/icon_mission_patch_imageview"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/black"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -22,7 +22,6 @@
             android:id="@+id/icon_launch_success_imageview"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@color/black"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -61,16 +60,6 @@
             android:layout_height="wrap_content"
             android:text="@string/days_label"
             app:layout_constraintTop_toBottomOf="@id/rocket_label_textview"
-            app:layout_constraintLeft_toRightOf="@id/icon_mission_patch_imageview"
-            android:paddingStart="8dp"
-            android:paddingTop="4dp" />
-
-        <TextView
-            android:id="@+id/since_from_label_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/since_from_label"
-            app:layout_constraintTop_toBottomOf="@id/days_label_textview"
             app:layout_constraintLeft_toRightOf="@id/icon_mission_patch_imageview"
             android:paddingStart="8dp"
             android:paddingTop="4dp" />
@@ -129,12 +118,12 @@
 
             <TextView
                 android:id="@+id/days_textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="62dp"
+                android:layout_height="23dp"
+                android:paddingTop="4dp"
                 android:text="+/-{days}"
-                app:layout_constraintTop_toBottomOf="@id/rocket_name_textview"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:paddingTop="4dp" />
+                app:layout_constraintTop_toBottomOf="@id/rocket_name_textview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

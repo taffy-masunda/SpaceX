@@ -1,27 +1,29 @@
 package za.co.taffy.spacexcodetest.contract;
 
-import za.co.taffy.spacexcodetest.model.Company;
+import java.util.List;
 
-public interface MainActivityContract {
+import za.co.taffy.spacexcodetest.model.LaunchListResponse;
 
-    interface Model{
+public interface LaunchesMainActivityContract {
+
+    interface Model {
         interface OnFinishListener {
-            void onFinished(Company companyInformation);
+            void onFinished(List<LaunchListResponse> launchesList);
             void onFailure(Throwable t);
         }
-        void getCompanyInfo(OnFinishListener onFinishsListener);
-        void getLaunches(OnFinishListener onFinishsListener);
+
+        void getLaunchesList(OnFinishListener onFinishsListener);
     }
 
-    interface View{
-        void showProgressBar();
-        void hideProgressBar();
-        void setDataToTextView(Company companyInfo);
-        void onResponseFailure(Throwable t);
+    interface View {
+        void showLaunchesProgressBar();
+        void hideLaunchesProgressBar();
+        void setDataToRecyclerView(List <LaunchListResponse> launchesList);
+        void onLaunchesResponseFailure(Throwable t);
     }
 
-    interface Presenter{
+    interface Presenter {
         void onDestroy();
-        void requestDataFromApi() ;
+        void requestLaunchesListFromApi();
     }
 }
